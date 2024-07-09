@@ -1,0 +1,450 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background-image: url('Images/Blackbackdrop.png'); /* Replace with the actual path to your image */
+    background-color: #ffffff;
+
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 9%; /* Adjusted padding for better responsiveness */
+    background: #00000080; /* Semi-transparent black background */
+    backdrop-filter: blur(6px); /* Applies blur effect to content behind the nav bar */
+    -webkit-backdrop-filter: blur(6px); /* Safari support */
+}
+
+.logo {
+    position: relative; /* Necessary for absolute positioning of children */
+    display: inline-block; /* Aligns with other inline elements */
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 100px; /* Uniform size */
+    height: auto;
+    transition: opacity 0.5s ease; /* Transition opacity for smooth effect */
+}
+
+.logo img.normal {
+    position: absolute; /* Layering */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Default image on top */
+    opacity: 1; /* Fully visible initially */
+}
+
+.logo img.hover {
+    position: absolute; /* Layering */
+    top: 0;
+    left: 0;
+    z-index: 0; /* Underneath initially */
+    opacity: 0; /* Fully hidden initially */
+}
+
+.logo:hover img.normal {
+    opacity: 0; /* Fades out on hover */
+}
+
+.logo:hover img.hover {
+    opacity: 1; /* Fades in on hover */
+}
+
+.logo a:hover {
+    transform: scale(1.05); /* Optional scaling effect */
+    transition: transform 0.5s ease; /* Smooth scaling transition */
+}
+
+#navlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#navlist li {
+    margin-right: 40px;
+    position: relative; /* Added position relative to create space for the dot */
+    margin-bottom: 10px;
+}
+
+#navlist a {
+    text-decoration: none;
+    color: #c7c7c7;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    padding: 10px 15px;
+    transition: color 0.3s ease; /* Added transition for color change */
+}
+
+#navlist a:hover {
+    color: white; /* Change text color when hovering */
+
+}
+
+#navlist a.active {
+    color:white; /* Change link color when active */
+
+}
+
+#navlist a.active::after {
+    content: "\2022"; /* Unicode character for bullet (you can customize this) */
+    color: white; /* Dot color */
+    position: absolute;
+    bottom: -25px; /* Adjust the distance from the text */
+    left: 50%; /* Position in the middle of the link */
+    transform: translateX(-50%);
+    font-size: 24px; /* Adjust the size of the dot */
+}
+
+@media (max-width: 680px) {
+    header {
+        padding: 20px 5%; /* Adjusted padding for better responsiveness */
+        
+    }
+    @media (max-width: 680px) {
+        .logo {
+            text-align: center;
+            width: 100%; /* Ensure the logo takes up the full width */
+        }
+    }
+    
+    .navlist {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        align-items: center;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .navlist.open {
+        display: flex;
+    }
+
+    .navlist li {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-text {
+        max-width: 100%; /* Ensure text takes full width on smaller screens */
+        text-align: center; /* Center-align text within the hero section */
+    }
+}
+
+
+.about {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    position: relative;
+    z-index: 1; /* Ensure the section stays above other content */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.169); /* Add drop shadow */
+    margin-bottom: 20px;
+}
+.about-content {
+    display: flex;
+    flex-direction: row; /* Set the direction to row */
+    align-items: center;
+    justify-content: center;
+    background-color: #EAE6E3;
+    padding-bottom: 20px;
+}
+
+.about-content img {
+    width: 300px;
+    height: 300px;
+    border-radius: 360px;
+    margin-right: 20px; /* Add margin to separate the image from the text */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.text-content h1 {
+    color: #000000;
+    line-height: 1.;
+    max-width: 900px;
+    text-align: left; /* Align the text to the left */
+    padding-left: 50px;
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 80px;
+    padding-top: 90px;
+}
+
+.text-content p {
+    color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 700px;
+    text-align: left; /* Align the text to the left */
+    padding-left: 50px;
+}
+
+.text-content h2 {
+    color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic; /* Make the font italic */
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 600px;
+    text-align: left; /* Align the text to the left */
+    padding-left: 50px;
+    margin-top: 20px;
+}
+.about-content h2 i.bx {
+    font-size: 20px; /* Adjust the font size as needed */
+    margin-right: 5px;
+}
+
+.text-content h3 {
+    color: #000000;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 600px;
+    text-align: left; /* Align the text to the left */
+    padding-left: 50px;
+    margin-top: 5px;
+}
+
+.awhite-section {
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    padding-top: 40px;
+    margin-top: -20px; /* Adjust to overlap with shadow */
+    z-index: 0; /* Ensure the section stays below the shadow */
+}
+
+
+.awhite-section h2 {
+    padding-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.contact-details {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between contact details and skills */
+}
+
+.contact-left {
+    width: 40%; /* Set width for contact details */
+    text-align: left; /* Align text to the left */
+    position: relative; /* Add position relative to position the line */
+}
+
+.contact-left h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+    margin-right: 200px;
+    font-size: 20px;
+}
+
+.contact-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    background-color: #1a1a1a; /* Color of the vertical line */
+}
+
+.contact-left ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-top: 30px; /* Remove default padding */
+    margin-right: 100px;
+}
+
+.contact-left ul li {
+    margin-bottom: 30px; /* Increase space between items */
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    width: auto;
+}
+
+.skills {
+    width: 100%;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.skills h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+    text-align: left;
+    font-size: 20px;
+}
+
+.skills h3 {
+    font-size: 20px;
+    padding-bottom: 20px;
+    font-weight: 200;
+    text-align: left; /* Center align the skills headings */
+}
+
+.skills-heading {
+    margin-top: 0;
+    
+}
+
+.skill-category {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    
+}
+
+.skill-category h3{
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.software-skills,
+.technical-skills,
+.coding-skills {
+    width: 30%; /* Adjust width as needed */
+    text-align: left; /* Center align text */
+    margin-right: 2%; /* Add a small margin between sections */
+    margin-left: 10px; /* Adjust the left margin to move the skill categories slightly to the right */
+}
+
+.software-skills,
+.technical-skills,
+.coding-skills:last-child {
+    margin-right: 0; /* Remove margin for the last section */
+}
+
+.software-skills ul,
+.technical-skills ul,
+.coding-skills ul {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.software-skills ul li,
+.technical-skills ul li,
+.coding-skills ul li {
+    margin-bottom: 5px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+}
+
+section {
+    padding: 80px 0; /* Adjust padding as needed */
+    text-align: center;
+}
+
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.aboutsection-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+.about-button-container {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    margin-left: 50px; /* Align with the text above */
+    margin-top: 20px; /* Optional: add some spacing above */
+}
+
+.green-button {
+    display: inline-block;
+    color: #ffffff;
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    font-optical-sizing: auto;
+    background: linear-gradient(to bottom right, #2d2d2d, #000000);
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    font-size: 12px;
+    font-weight: 300;
+    border-radius: 30px;
+    transition: transform 0.3s ease; /* Only transform property for smoother animation */
+    box-shadow: 3px 3px 10px rgba(94, 94, 94, 0.3); /* Box shadow for button */
+}
+
+.green-button:hover {
+    transform: scale(1.05); /* Enlarge the button on hover */
+    background: transparent; /* Transparent background */
+    color: #000000;
+    box-shadow: 3px 3px 10px rgba(94, 94, 94, 0.3); /* Box shadow for button */
+    border: 1px solid #000000;
+    transform: scale(1.1);
+}
+
+
+.icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    z-index: 1000;
+}
+
+.icons a {
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 24px;
+    color: #5d5d5d;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add color transition for hover effect */
+}
+
+.icons a:hover {
+    transform: scale(1.1); /* Enlarge the icon on hover */
+    color: #000000; /* Change the color to green on hover */
+}
+
+footer {
+    color: #5d5d5d; /* Text color */
+    padding-bottom: 10px;
+    text-align: center; /* Center-align text */
+    background-color: white;
+}
+
+.footer-content {
+    max-width: 800px; /* Set maximum width for content */
+    margin: 0 auto; /* Center content horizontally */
+}
