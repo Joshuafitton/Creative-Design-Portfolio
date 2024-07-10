@@ -183,7 +183,7 @@ section {
     position: relative;
     width: 100%; /* Adjust as needed */
     height: auto; /* Adjust as needed */
-    background-image: url('images/Logo Banner.png');
+    background-image: url('images/Logo banner.png');
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent image from repeating */
