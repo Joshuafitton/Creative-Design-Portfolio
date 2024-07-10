@@ -1066,6 +1066,10 @@ footer {
     color: #000000;
 }
 
+.mural-image-container img{
+    width: 50px;
+    height: auto;
+}
 
 
 
