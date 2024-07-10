@@ -933,7 +933,7 @@ section {
 
 .last-section h1 {
     padding-bottom: 20px;
-    color: #000000;
+    color: #5d5d5d;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
@@ -941,14 +941,14 @@ section {
     font-size: 40px;
 }
 .last-section h3 {
-    color: #EAE6E3;
+    color: #888888;
     font-family: "Raleway", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
 }
 .last-section h4 {
-    color: #EAE6E3;
+    color: #888888;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
@@ -957,7 +957,7 @@ section {
     margin-top: 20px;
 }
 .last-section p {
-    color: #EAE6E3;
+    color: #888888;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
