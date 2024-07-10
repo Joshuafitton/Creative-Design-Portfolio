@@ -179,6 +179,16 @@ section {
     background-repeat: no-repeat; /* Prevent image from repeating */
 }
 
+.top-section2 {
+    position: relative;
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    background-image: url('images/Logo Banner.png');
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+}
+
 .Title-section {
     color: #000000;
     background-color: #EAE6E3;
