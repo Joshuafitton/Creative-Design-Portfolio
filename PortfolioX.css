@@ -1005,7 +1005,8 @@ section {
 }
 
 .last-section .final-design img {
-    max-width: 20%; /* Adjust as needed */
+    width: 600px;
+    height: auto;
     margin: 0 10px; /* Adjust spacing between images */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding-bottom: 20px;
